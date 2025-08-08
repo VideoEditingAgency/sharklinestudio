@@ -193,6 +193,32 @@
   <footer>
     &copy; 2025 Sharkline Studio. All rights reserved.
   </footer>
+
+   <script>
+    const videos = document.querySelectorAll(".carousel-item video");
+
+    videos.forEach(video => {
+      video.addEventListener("mouseenter", () => {
+        // Pause all other videos
+        videos.forEach(v => {
+          if (v !== video) {
+            v.pause();
+            v.currentTime = 0;
+            v.muted = true;
+          }
+        });
+        video.muted = false;
+        video.play();
+      });
+
+      video.addEventListener("mouseleave", () => {
+        video.pause();
+        video.currentTime = 0;
+        video.muted = true;
+      });
+    });
+  </script>
 </body>
 
 </html>
+
