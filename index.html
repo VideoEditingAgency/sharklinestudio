@@ -142,18 +142,22 @@
 
   <section id="work">
     <h2>Our Work</h2>
-    <div class="carousel">
-      <div class="carousel-item">
-        <video src="reel1.mp4" autoplay loop ></video>
-      </div>
-      <div class="carousel-item">
-        <video src="reel2.mp4" autoplay loop muted></video>
-      </div>
-      <div class="carousel-item">
-        <video src="reel3.mp4" autoplay loop muted></video>
-      </div>
-      <div class="carousel-item">
-        <video src="reel4.mp4" autoplay loop muted></video>
+    <div class="video-grid">
+    <video class="reel" muted preload="none" width="250">
+      <source src="videos/reel1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video class="reel" muted preload="none" width="250">
+      <source src="videos/reel2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video class="reel" muted preload="none" width="250">
+      <source src="videos/reel3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video class="reel" muted preload="none" width="250">
+      <source src="videos/reel4.mp4" type="video/mp4">
+      Your browser does not support the video tag.
       </div>
     </div>
   </section>
@@ -193,6 +197,23 @@
   <footer>
     &copy; 2025 Sharkline Studio. All rights reserved.
   </footer>
+
+  <script>
+  document.querySelectorAll(".reel").forEach(video => {
+    video.addEventListener("mouseenter", () => {
+      video.muted = false;
+      video.play();
+    });
+
+    video.addEventListener("mouseleave", () => {
+      video.pause();
+      video.currentTime = 0;
+      video.muted = true;
+    });
+  });
+</script>
+  
 </body>
 
 </html>
+
