@@ -1,119 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sharkline Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sharkline Studio - Video Editing Services</title>
   <style>
-    /* Basic Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       font-family: Arial, sans-serif;
-      background-color: #fff;
-      color: #333;
-      line-height: 1.6;
-      padding: 20px;
+      margin: 0;
+      padding: 0;
+      background-color: #0f0f0f;
+      color: #e0f2f1;
     }
 
     header {
+      background-color: #1c1c1c;
+      padding: 1rem 2rem;
       text-align: center;
-      margin-bottom: 40px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     }
 
-    h1 {
-      font-size: 2.5rem;
-      color: #0077ff;
-    }
-
-    /* Work Section */
-    .work-section {
-      padding: 40px 20px;
-      background-color: #f7f7f7;
-      border-radius: 12px;
-      margin: 40px auto;
-      max-width: 1000px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .work-section h2 {
-      text-align: center;
+    header h1 {
+      color: #00bfa5;
+      margin: 0;
       font-size: 2rem;
-      margin-bottom: 20px;
-      color: #222;
     }
 
-    .video-grid {
+    nav {
       display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
       justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
     }
 
-    .video-grid video {
+    nav a {
+      color: #00bfa5;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #00bfa5;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .service {
+      background-color: #1e1e1e;
+      padding: 1rem;
+      border-left: 4px solid #00bfa5;
+      margin-bottom: 1.5rem;
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel-item {
+      flex: none;
+      width: 300px;
+      height: 500px;
+      scroll-snap-align: start;
+      background-color: #2a2a2a;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .carousel-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .box {
+      background-color: #1e1e1e;
+      padding: 1.5rem;
       border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.2s ease-in-out;
+      border: 1px solid #333;
+      margin-bottom: 2rem;
     }
 
-    .video-grid video:hover {
-      transform: scale(1.03);
+    .faq-item {
+      background-color: #1e1e1e;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: 1px solid #333;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .video-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .video-grid video {
-        width: 90%;
-      }
+    footer {
+      background-color: #1c1c1c;
+      text-align: center;
+      padding: 1rem;
+      color: #888;
     }
   </style>
 </head>
-<body>
 
+<body>
   <header>
     <h1>Sharkline Studio</h1>
+    <nav>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <!-- ✅ Our Work Section -->
-  <div class="work-section">
-    <h2>Our Work</h2>
-    <div class="video-grid">
-      <video class="reel" muted preload="none" width="250">
-        <source src="videos/reel1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <video class="reel" muted preload="none" width="250">
-        <source src="videos/reel2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <!-- Add more videos -->
+  <section id="about" style="margin-top: 2rem;">
+    <div class="box">
+      <h2>About Us</h2>
+      <p>
+        Sharkline Studio is a professional editing agency dedicated to transforming raw footage into engaging and visually stunning content. We specialize in short-form video editing designed to boost your brand, captivate your audience, and maximize performance on social media platforms. With a creative and detail-oriented approach, we deliver timely, high-quality edits that reflect your unique voice and message.
+      </p>
     </div>
-  </div>
+  </section>
 
-  <!-- ✅ Hover Audio Script -->
-  <script>
-    document.querySelectorAll(".reel").forEach(video => {
-      video.addEventListener("mouseenter", () => {
-        video.muted = false;
-        video.play();
-      });
+  <section id="services">
+    <h2>Services</h2>
+    <div class="service">
+      <h3>Short Form Editing</h3>
+      <p>Expertly crafted short videos for Instagram Reels, YouTube Shorts, and TikTok — fast-paced, viral-style edits with engaging hooks and motion effects.</p>
+    </div>
+  </section>
 
-      video.addEventListener("mouseleave", () => {
-        video.pause();
-        video.currentTime = 0;
-        video.muted = true;
-      });
-    });
-  </script>
+  <section id="work">
+    <h2>Our Work</h2>
+    <div class="carousel">
+      <div class="carousel-item">
+        <video src="reel1.mp4" autoplay loop ></video>
+      </div>
+      <div class="carousel-item">
+        <video src="reel2.mp4" autoplay loop muted></video>
+      </div>
+      <div class="carousel-item">
+        <video src="reel3.mp4" autoplay loop muted></video>
+      </div>
+      <div class="carousel-item">
+        <video src="reel4.mp4" autoplay loop muted></video>
+      </div>
+    </div>
+  </section>
 
+  <section id="faq">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <strong>What kind of edits do you offer?</strong>
+      <p>We specialize in short-form content for social media platforms like Instagram, YouTube Shorts, and TikTok.</p>
+    </div>
+    <div class="faq-item">
+      <strong>How quickly do you deliver?</strong>
+      <p>Usually within 24–72 hours depending on project size.</p>
+    </div>
+    <div class="faq-item">
+      <strong>How do I send footage?</strong>
+      <p>Via Google Drive, Dropbox, or WeTransfer.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Can I request revisions?</strong>
+      <p>Yes, we offer up to 2 free revisions per video.</p>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <h2>Privacy Policy</h2>
+    <div class="box">
+      <p>Your privacy is important to us. We don’t share any data without consent. Read our full policy at <a href="https://www.privacypolicies.com" style="color: #00bfa5;">PrivacyPolicies.com</a>.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email us at: <a href="mailto:sharklinestudio@gmail.com" style="color: #00bfa5;">sharklinestudio@gmail.com</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Sharkline Studio. All rights reserved.
+  </footer>
 </body>
+
 </html>
